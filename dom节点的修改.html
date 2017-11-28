@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul id="lb">
+			<li id="bq1">1</li>
+			<li id="bq2">2</li>
+			<li id="bq3">3</li>
+			<li id="bq4">4</li>
+			<li id="bq5">5</li>
+		</ul>
+		<input type="button" value="颠倒" onclick="reverse()"/>
+		<input type="button" value="插5后" onclick="insertAfter()"/>
+		<input type="button" value="插1前" onclick="insertB()"/>
+		<input type="button" value="删除3" onclick="cancle()"/>
+		<script type="text/javascript">
+			var parent = document.getElementById("lb");
+			var reverse = function(){
+				var child1 = parent.childNodes[0];
+				for(var i=0; i<5; i++){
+					var child = parent.childNodes[i];
+					parent.insertBefore(child1,child);
+				}
+			};
+			var insertAfter = function(){
+				var elm = document.createElement("li");
+				elm.innerText = "6";
+				parent.appendChild(elm);
+			};
+			var insertB = function(){
+				var elm = document.createElement("li");
+				elm.innerText = "0";
+				var li1 = document.getElementById("bq1");
+				parent.insertBefore(elm,li1);
+			};
+			var cancle = function(){
+				var elm = document.getElementById("bq3");
+				parent.removeChild(elm);
+			};
+		</script>
+	</body>
+</html>

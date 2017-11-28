@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<p id="time"></p>
+		<script type="text/javascript">
+			var myDate = new Date();
+			var p = document.getElementById("time");
+			var allTime = Date();
+			allTime = allTime + "<br>年：" + myDate.getYear();
+			allTime = allTime + "<br>月：" + myDate.getMonth();
+			allTime = allTime + "<br>日：" + myDate.getDay();
+			allTime = allTime + "<br>小时：" + myDate.getHours();
+			p.innerHTML = allTime;
+		</script>
+	</body>
+</html>
